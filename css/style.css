@@ -1,0 +1,668 @@
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  color: #000;
+  padding-bottom: 4rem;
+}
+
+a img {
+  visibility: visible;
+}
+a span:first-child {
+  visibility: visible;
+}
+
+.google-logo {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/logo--google.svg?v=2) no-repeat 50% 50%;
+  background-size: 120px 44px;
+  width: 120px;
+  height: 44px;
+  color: #4285F4;
+  display: block;
+  position: absolute;
+  top: 0.3rem;
+  right: 1.5rem;
+  z-index: 2;
+}
+.google-logo a {
+  display: block;
+  width: 120px;
+  height: 44px;
+}
+@media screen and (max-width: 530px) {
+  .google-logo {
+    background-position: 0 3px;
+    margin-left: -20px;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+}
+@media screen and (max-width: 255px) {
+  .google-logo .google_logo {
+    display: none;
+  }
+}
+
+#top {
+  padding-top: 30px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #ebebeb;
+}
+
+#search {
+  border-color: transparent;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 632px;
+  height: 44px;
+}
+@media screen and (max-width: 530px) {
+  #search {
+    padding: 10px;
+    height: 60px;
+  }
+  #search a {
+    max-width: 80px;
+  }
+}
+#search form {
+  display: inline;
+}
+#search form #GoogleSearch input {
+  position: relative;
+  line-height: 34px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 34px;
+  font: 16px arial, sans-serif;
+  padding-left: 16px;
+  border-color: transparent;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  height: 44px;
+  border-radius: 3px;
+  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#search form #GoogleSearch input:hover, #search form #GoogleSearch input:focus {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+#search form #GoogleSearch button {
+  display: none;
+  color: #4284f3;
+  background: url(img/icon--microphone.png) no-repeat 50% 50%;
+  background-size: 24px 24px;
+  border-color: transparent;
+  border-radius: 0 2px 2px 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  left: -45px;
+  outline: 0;
+  box-shadow: none;
+  z-index: 99;
+}
+
+.menu-wrapper {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  z-index: 3;
+}
+.menu-wrapper img {
+  width: 34px;
+  height: 60px;
+}
+@media screen and (max-width: 900px) {
+  .menu-wrapper {
+    top: -8px;
+    right: -8px;
+    width: 40px;
+    height: 40px;
+  }
+}
+.menu-wrapper:hover .menu {
+  width: 200px;
+  height: 275px;
+  border-radius: 3px;
+  z-index: 999;
+}
+.menu-wrapper:hover .menu img {
+  opacity: 0;
+  transition: all 50ms ease-in;
+}
+.menu-wrapper:hover .menu ul {
+  display: block;
+  list-style-type: none;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 22px;
+}
+.menu-wrapper:hover .menu ul li {
+  transition: all 200ms ease-in;
+  width: 180px;
+  margin: 0 auto;
+}
+.menu-wrapper:hover .menu ul li a {
+  font-family: "Product Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  width: 180px;
+  color: #aaa;
+  padding: 7px 0;
+  margin: 5px 0;
+  border-radius: 4px;
+  transition: all 100ms ease-in;
+}
+.menu-wrapper:hover .menu ul li a:hover {
+  color: #4285F4;
+  background-color: #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-appearance: none;
+}
+.menu-wrapper:hover .menu ul li a:focus, .menu-wrapper:hover .menu ul li a:active {
+  color: #fff;
+  background-color: #4285F4;
+}
+.menu-wrapper .menu {
+  width: 60px;
+  height: 60px;
+  top: 25px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px 0px;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 2px 2.5px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  transition: all 200ms ease-in-out;
+}
+.menu-wrapper .menu ul {
+  display: none;
+  -webkit-animation: appear 1000ms;
+          animation: appear 1000ms;
+}
+@media screen and (max-width: 900px) {
+  .menu-wrapper .menu {
+    top: -5px;
+    right: -5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  .menu-wrapper .menu img {
+    width: 25px;
+    height: 43px;
+    margin-left: -3px;
+  }
+}
+
+.sites {
+  padding-top: 3rem;
+  color: inherit;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: center;
+}
+.sites a {
+  color: inherit;
+  font-size: 1.3rem;
+  background: black;
+  border-radius: 4px;
+  width: 188px;
+  height: 120px;
+  margin: 1rem;
+  line-height: 120px;
+  text-align: center;
+  color: #4584ee;
+  box-sizing: border-box;
+  display: block;
+  vertical-align: middle;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-appearance: none;
+}
+.sites a:hover, .sites a:focus, .sites a:active {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+.sites a span:nth-child(1) {
+  font-family: Material-Icons;
+  padding-right: 0;
+  font-size: 55px;
+}
+.sites a span#title {
+  opacity: 0;
+  position: absolute;
+  font-size: 16px;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  transition: all ease-in-out 150ms;
+  position: absolute;
+  top: 77px;
+  left: 0;
+  color: #bbb;
+  width: 188px;
+  height: 1rem;
+  text-align: center;
+  text-shadow: none;
+}
+.sites a:hover span#title {
+  opacity: 1;
+}
+.sites a img {
+  width: 55px;
+}
++ .sites a:nth-child(3n) {
+  page-break-after: always;
+}
+.sites a:hover, .sites a:focus, .sites a:active {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  text-decoration: none;
+  color: #4584ee;
+}
+
+#Amazon {
+  background: #0b0c07;
+}
+#Amazon img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Apple {
+  background: #999;
+}
+#Apple img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Behance {
+  background: #1769ff;
+}
+#Behance img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Bootstrap {
+  background: #563d7c;
+}
+#Bootstrap img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#ChromeStore {
+  background: #e3e4e5;
+}
+#ChromeStore img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+  width: 65px;
+}
+
+#Codepen {
+  background: #181818;
+}
+#Codepen img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Dribbble {
+  background: #e84c88;
+}
+#Dribbble img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Dropbox {
+  background: #007ee5;
+}
+#Dropbox img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Facebook {
+  background: #3b5998;
+}
+#Facebook img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Feedly {
+  background: #6cc655;
+}
+#Feedly img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Flickr {
+  background: #0063dc;
+}
+#Flickr img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Flipboard {
+  background: #df272e;
+}
+#Flipboard img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Firefox {
+  background: #c13832;
+}
+#Firefox img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#GitHub {
+  background: #25292e;
+}
+#GitHub img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Google {
+  background: #4285F4;
+}
+#Google img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Keep {
+  background: #ffbb00;
+}
+#Keep img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+
+#GoogleMusic {
+  background: #ff5722;
+}
+#GoogleMusic img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#GooglePlay {
+  background: #607d8b;
+}
+#GooglePlay img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Hangouts {
+  background: #0c9d58;
+}
+#Hangouts img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Heroku {
+  background: #430098;
+}
+#Heroku img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Hulu {
+  background: #66aa33;
+}
+#Hulu img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 75px;
+}
+
+#Imgur {
+  background: #34373c;
+}
+#Imgur img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+  width: 100px;
+}
+
+#Inbox {
+  background: #4285F4;
+}
+#Inbox img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+
+#Instagram {
+  background: #e4405f;
+}
+#Instagram img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Instapaper {
+  background: #1f1f1f;
+}
+#Instapaper img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#JSFiddle {
+  background: #3fa1f5;
+}
+#JSFiddle img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#LinkedIn {
+  background: #0077b5;
+}
+#LinkedIn img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Medium {
+  background: #00ab6c;
+}
+#Medium img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Messenger {
+  background: #0084ff;
+}
+#Messenger img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+
+#Netflix {
+  background: #e50914;
+}
+#Netflix img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#OperaAddons {
+  background: #ff1b2d;
+}
+#OperaAddons img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Pinterest {
+  background: #bd081c;
+}
+#Pinterest img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Pocket {
+  background: #ef3f56;
+}
+#Pocket img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#ProductHunt {
+  background: #da552f;
+}
+#ProductHunt img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+
+#Quora {
+  background: #a82400;
+}
+#Quora img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Reddit {
+  background: #ff4500;
+}
+#Reddit img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#RSS {
+  background: #ffa500;
+}
+#RSS img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Slack {
+  background: #6ecadc;
+}
+#Slack img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Spotify {
+  background: #2ebd59;
+}
+#Spotify img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Twitch {
+  background: #6441a5;
+}
+#Twitch img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Twitter {
+  background: #1da1f2;
+}
+#Twitter img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Vimeo {
+  background: #1ab7ea;
+}
+#Vimeo img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#Wikipedia {
+  background: #fff;
+}
+#Wikipedia img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+
+#YouTube {
+  background: #fd0016;
+}
+#YouTube img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 65px;
+}
+
+#YouTubeMusic {
+  background: #191919;
+}
+#YouTubeMusic img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+
+#Instagram {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
