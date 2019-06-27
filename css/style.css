@@ -41,6 +41,7 @@ a span:first-child {
   width: 250px;
   height: 55px;
   left: 15px;
+
   color: #4285F4;
   display: block;
   position: absolute;
@@ -234,7 +235,7 @@ a span:first-child {
 }
 
 .sites {
-  padding-top: 3rem;
+  padding-top: 0.5rem;
   color: inherit;
   display: flex;
   flex-flow: row wrap;
