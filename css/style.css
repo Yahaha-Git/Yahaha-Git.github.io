@@ -36,10 +36,11 @@ a span:first-child {
 }
 
 .google-logo {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/logo--google.svg?v=2) no-repeat 50% 50%;
-  background-size: 120px 44px;
-  width: 120px;
-  height: 44px;
+  background: url(../img/logo.png) no-repeat 50% 50%;
+  background-size: 200px 55px;
+  width: 200px;
+  height: 55px;
+  left: 80%;
   color: #4285F4;
   display: block;
   position: absolute;
@@ -49,8 +50,8 @@ a span:first-child {
 }
 .google-logo a {
   display: block;
-  width: 120px;
-  height: 44px;
+  width: 200px;
+  height: 55px;
 }
 @media screen and (max-width: 530px) {
   .google-logo {
